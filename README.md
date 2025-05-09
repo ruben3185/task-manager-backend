@@ -76,6 +76,7 @@ JWT_SECRET=una_clave_secreta
 ## Run 
 ```bash
 node app.js
+ti
 ```
 
 ## 📨 Endpoints
@@ -95,3 +96,35 @@ node app.js
 | POST   | `/tasks`         | Crear una nueva tarea                | ✅        |
 | PUT    | `/tasks/:taskId` | Editar tarea (con validación ACL)    | ✅        |
 | DELETE | `/tasks/:taskId` | Eliminar tarea (con validación ACL)  | ✅        |
+
+
+### Estructura del proyecto
+
+/task-manager-backend
+│
+├── .gitignore
+├── .env
+├── app.js
+│
+├── config
+│   ├── db.js
+│   └── jwt.js
+│
+├── controllers
+│   ├── authController.js
+│   └── taskController.js
+│
+├── middlewares
+│   ├── authMiddleware.js
+│   └── permissionMiddleware.js
+│
+├── models
+│   ├── userModel.js
+│   └── taskModel.js
+│
+├── routes
+│   ├── authRoutes.js
+│   └── taskRoutes.js
+│
+└── services
+    └── gateService.js
