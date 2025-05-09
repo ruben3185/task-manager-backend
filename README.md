@@ -49,7 +49,7 @@ Puedes crear la base de datos `task_manager` en MySQL tanto en Windows como en L
 
 ```bash
     mysql -u root -p
-```
+
 
 CREATE DATABASE task_manager;
 
@@ -58,9 +58,12 @@ GRANT ALL PRIVILEGES ON task_manager.* TO 'usuario'@'localhost';
 FLUSH PRIVILEGES;
 
 EXIT;
+```
 
 
 ## 🧾 Crear un archivo .env 
+
+```bash
 
 PORT=3000
 DB_HOST=localhost
@@ -68,6 +71,8 @@ DB_USER=root
 DB_PASSWORD=tu_password
 DB_NAME=task_manager
 JWT_SECRET=una_clave_secreta
+
+```
 
 
 ## Run 
