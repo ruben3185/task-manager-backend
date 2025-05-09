@@ -1,9 +1,5 @@
 # 📋 Task Manager Backend
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ruben3185/task-manager-backend?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/ruben3185/task-manager-backend?style=flat-square)
-![License](https://img.shields.io/github/license/ruben3185/task-manager-backend?style=flat-square)
-
 Backend API para la gestión de tareas, desarrollada en **Node.js** con autenticación **JWT**, control de acceso por middleware y gates, y persistencia de datos en **MySQL**.
 
 ---
