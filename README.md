@@ -75,8 +75,11 @@ JWT_SECRET=una_clave_secreta
 
 ## Run 
 ```bash
+npm run dev 
+o 
+npm start 
+o
 node app.js
-ti
 ```
 
 ## 📨 Endpoints
@@ -100,6 +103,7 @@ ti
 
 ### Estructura del proyecto
 
+```bash
 /task-manager-backend
 │
 ├── .gitignore
@@ -128,3 +132,5 @@ ti
 │
 └── services
     └── gateService.js
+```
+
