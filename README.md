@@ -1,8 +1,7 @@
 # 📋 Task Manager Backend
-
-![GitHub repo size](https://img.shields.io/github/repo-size/ruben3185/task-manager-backend)
-![GitHub last commit](https://img.shields.io/github/last-commit/ruben3185/task-manager-backend)
-![License](https://img.shields.io/github/license/ruben3185/task-manager-backend)
+![GitHub repo size](https://img.shields.io/github/repo-size/ruben3185/task-manager-backend?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/ruben3185/task-manager-backend?style=flat-square)
+![License](https://img.shields.io/github/license/ruben3185/task-manager-backend?style=flat-square)
 
 Backend API para la gestión de tareas, desarrollada en **Node.js** con autenticación **JWT**, control de acceso por middleware y gates, y persistencia de datos en **MySQL**.
 
@@ -48,11 +47,13 @@ Puedes crear la base de datos `task_manager` en MySQL tanto en Windows como en L
 2. Conéctate al cliente de MySQL:
 
 ```bash
-    mysql -u root -p
+mysql -u root -p
+```
 
+3. Cremos la DB 
 
+```bash
 CREATE DATABASE task_manager;
-
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'clave_segura';
 GRANT ALL PRIVILEGES ON task_manager.* TO 'usuario'@'localhost';
 FLUSH PRIVILEGES;
