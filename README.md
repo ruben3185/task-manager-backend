@@ -54,7 +54,6 @@ CREATE DATABASE task_manager;
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'clave_segura';
 GRANT ALL PRIVILEGES ON task_manager.* TO 'usuario'@'localhost';
 FLUSH PRIVILEGES;
-
 EXIT;
 ```
 
@@ -62,13 +61,10 @@ EXIT;
 ## 🧾 Crear un archivo .env 
 
 ```bash
+DB_URL=mysql://usuario:clave_segura@localhost:3306/task_manager
 
-PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=tu_password
-DB_NAME=task_manager
-JWT_SECRET=una_clave_secreta
+JWT_SECRET=mi_clave_secreta
+
 
 ```
 
