@@ -37,3 +37,12 @@ exports.login = async (req, res) => {
     res.status(500).json({ error: 'Error en el login', details: error.message });
   }
 };
+
+// Logout simbólico
+exports.logout = async (req, res) => {
+  // No se puede invalidar el token JWT en el backend sin usar blacklist.
+  // Por lo tanto, solo enviamos una respuesta de confirmación.
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  console.log(token)
+  res.status(200).json({ message: 'Logout exitoso. Elimina el token del cliente.' });
+};
