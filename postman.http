@@ -1,3 +1,14 @@
+######
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+  {
+    "username": "josejose",
+    "password": "123456"
+  }
+
+
+######
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
@@ -22,7 +33,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
   {
-    "username": "josejose2",
+    "username": "josejose",
     "password": "123456"
   }
 
@@ -30,7 +41,6 @@ Content-Type: application/json
 POST http://localhost:5000/api/auth/logout
 Content-Type: application/json
 Authorization: Bearer token
-
 
 
 ### Crear tarea
@@ -63,3 +73,63 @@ Authorization: Bearer token
 ### Eliminar tarea
 DELETE http://localhost:5000/api/tasks/1
 Authorization: Bearer token
+
+
+
+
+# Cambiar esto por tu token real después de hacer login
+TOKEN="TU_TOKEN_AQUI"
+
+# Registro de usuario
+curl -X POST http://localhost:5000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username": "josejose2", "password": "123456"}'
+
+echo -e "\n--- Usuario registrado ---\n"
+
+# Login de usuario
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "josejose2", "password": "123456"}'
+
+echo -e "\n--- Usuario logueado (guarda el token de la respuesta) ---\n"
+
+# Logout de usuario
+curl -X POST http://localhost:5000/api/auth/logout \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN"
+
+echo -e "\n--- Usuario deslogueado ---\n"
+
+# Crear tarea
+curl -X POST http://localhost:5000/api/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"title": "Tarea de prueba", "description": "Esta es una tarea de ejemplo"}'
+
+echo -e "\n--- Tarea creada ---\n"
+
+# Listar tareas
+curl -X GET http://localhost:5000/api/tasks \
+  -H "Authorization: Bearer $TOKEN"
+
+echo -e "\n--- Tareas listadas ---\n"
+
+# Editar tarea (modifica el ID si es necesario)
+TASK_ID=5
+curl -X PUT http://localhost:5000/api/tasks/$TASK_ID \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"title": "Título actualizado", "description": "Descripción actualizada", "status": "en_progreso"}'
+
+echo -e "\n--- Tarea editada ---\n"
+
+# Eliminar tarea (modifica el ID si es necesario)
+TASK_ID=1
+curl -X DELETE http://localhost:5000/api/tasks/$TASK_ID \
+  -H "Authorization: Bearer $TOKEN"
+
+echo -e "\n--- Tarea eliminada ---\n"
+
+
+
