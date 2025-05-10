@@ -1,29 +1,36 @@
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
-{
-  "username": "josejose2",
-  "password": "123456"
-}
-
-### Login del usuario
-POST http://localhost:5000/api/auth/login
-Content-Type: application/json
-
-{
-  "username": "josejose2",
-  "password": "123456"
-}
+  {
+    "username": "josejose2",
+    "password": "123456"
+  }
 
 
 ### Login del usuario
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
-{
-  "username": "josejose",
-  "password": "123456"
-}
+  {
+    "username": "josejose2",
+    "password": "123456"
+  }
+
+
+### Login del usuario
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+  {
+    "username": "josejose2",
+    "password": "123456"
+  }
+
+### Login del usuario
+POST http://localhost:5000/api/auth/logout
+Content-Type: application/json
+Authorization: Bearer token
+
 
 
 ### Crear tarea
@@ -35,10 +42,7 @@ Authorization: Bearer token
   "title": "Tarea de prueba",
   "description": "Esta es una tarea de ejemplo"
 }
-
-### Listar tareas del usuario autenticado
-GET http://localhost:5000/api/tasks
-Authorization: Bearer token
+|
 
 
 ### Listar tareas del usuario autenticado
